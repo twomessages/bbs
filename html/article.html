@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="lib/mapfish/mapfish.js" type="text/javascript" charset="UTF-8"></script>
+    <link rel="stylesheet" type="text/css" href="lib/fonts/font-awesome.min.css">
+    <link href="lib/mapfish/mapfish.css" type="text/css" rel="stylesheet" />
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/article.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function(){
+            var timer = null;
+            $(".search-box .search-type").mouseover(function(){
+                clearInterval(timer);
+                $(".search-box ul").css({"display":"block"});
+            }).mouseout(function(){
+                timer = setTimeout(function(){
+                    $(".search-box ul").css("display","none");
+                },100);
+            });
+
+            $(".search-box ul").mouseover(function(){
+                clearInterval(timer);
+            }).mouseout(function(){
+                timer = setTimeout(function(){
+                    $(".search-box ul").css("display","none");
+                },100);
+            });
+            $(".search-box ul li").click(function(){
+                $(".search-box .search-type text").text($(this).text());
+                $(".search-box ul").css("display","none");
+            });
+        })
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-box">
+        <h1 class="header-logo">LOGO</h1>
+        <nav class="header-nav">
+            <ul>
+                <li class="active"><a href="index.html">社区</a></li>
+                <li><a href="notes.html">笔记</a></li>
+                <li><a href="ask.html">问问</a></li>
+                <li><a href="front.html">前端</a></li>
+                <li><a href="javascript:;">技术</a></li>
+                <li><a href="javascript:;">教程</a></li>
+                <li><a href="javascript:;">资源</a></li>
+                <li><a href="javascript:;">招聘</a></li>
+                <li><a href="javascript:;">我的前端</a></li>
+                <li><a href="javascript:;">更多</a></li>
+            </ul>
+            <div class="header-loginbar">
+                <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
+            </div>
+        </nav>
+    </div>
+    <div class="clearfix"></div>
+</header>
+<div class="search">
+    <div class="search-box">
+        <input type="text" placeholder="请输入搜索内容" />
+        <span class="search-type"><text>帖子</text><i class="fa fa-caret-down"></i></span>
+        <ul>
+            <li>帖子</li>
+            <li>用户</li>
+        </ul>
+        <span class="search-btn"><i class="fa fa-search"></i> </span>
+        <dl>
+            <dt>热搜:</dt>
+            <dd><a href="javascript:;">Canvas</a></dd>
+            <dd><a href="javascript:;">WebGL</a></dd>
+            <dd><a href="javascript:;">CSS3</a></dd>
+            <dd><a href="javascript:;">WebSocket</a></dd>
+            <dd><a href="javascript:;">离线存储</a></dd>
+        </dl>
+    </div>
+</div>
+
+<section class="content">
+    <div class="current-path">
+        <a href="javascript:;"><i class="fa fa-home"></i></a>
+        <span class="fa fa-angle-right"></span>
+        <a href="javascript:;">社区</a>
+        <span class="fa fa-angle-right"></span>
+        <a href="javascript:;">Web前端</a><span class="fa fa-angle-right"></span>
+        <a href="javascript:;">HTML/CSS</a>
+    </div>
+    <div class="add-article">
+        <a href="javascript:;" class="btn">
+            <img src="images/post.png" />
+        </a>
+    </div>
+    <!--贴子内容-->
+    <div class="article-content">
+        <dl>
+            <dt>
+                <div class="view-info">
+                    <span>浏览:</span><i>3121</i><label class="space">|</label> <span>回复:</span><i>9</i>
+                </div>
+                <div class="author-name">
+                    <a href="javascript:;">JavaScript</a>
+                </div>
+                <div class="head-picture">
+                    <img src="images/head/head_11.jpg" />
+                </div>
+                <div class="money">
+                    <div>
+                        <i>188</i><span>主题</span>
+                    </div>
+                    <div>
+                        <i>69013</i><span>贴子</span>
+                    </div>
+                    <div>
+                        <i>90167</i><span>金币</span>
+                    </div>
+                </div>
+                <div class="position">
+                    <span>管理员</span>
+                </div>
+                <div class="user-level">
+                    <!--<span>管理员</span>-->
+                    <i class="fa fa-certificate" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <div class="message">
+                    <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+                </div>
+            </dt>
+            <dd>
+                <div class="title">
+                    <span class="type">[原创]</span><span class="text">HTML5 CANVAS绘图的REDO和UNDO功能的实现</span>
+                </div>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="edit-by-user">
+                    <span>本贴最后由<span class="user">JavaScript</span>于<span class="date-time">2015-12-02 10:11:11</span>编辑</span>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:<br/>
+                    onmousedown 鼠标按下<br/>
+                    onmouseup   鼠标抬起<br/>
+                    onmouseover  鼠标移入<br/>
+                    onmouseout   鼠标移除<br/>
+                    onmousemove 鼠标移动<br/>
+                    onclick       点击事件
+                </div>
+                <div class="comment give">
+                    <h1><i class="fa fa-circle-o"></i>打赏:<img src="images/arw.gif" /></h1>
+                    <div class="list">
+                        <span class="user"><label>参与</label></span>
+                        <span class="money"><label>金币</label><i class="total-money">+<i>18</i></i> </span>
+                        <span class="reason"><label>理由</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_11.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_46.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_33.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <!--贴子评论部份-->
+        <dl>
+            <dt>
+                <div class="author-name">
+                    <a href="javascript:;">JavaScript</a>
+                </div>
+                <div class="head-picture">
+                    <img src="images/head/head_2.jpg" />
+                </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>超级版主</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-certificate" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="edit-by-user">
+                    <span>本贴最后由<span class="user">JavaScript</span>于<span class="date-time">2015-12-02 10:11:11</span>编辑</span>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment give">
+                    <h1><i class="fa fa-circle-o"></i>打赏:<img src="images/arw.gif" /></h1>
+                    <div class="list">
+                        <span class="user"><label>参与</label></span>
+                        <span class="money"><label>金币</label><i class="total-money">+<i>18</i></i> </span>
+                        <span class="reason"><label>理由</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_11.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_46.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_33.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_3.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>高级版主</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="edit-by-user">
+                    <span>本贴最后由<span class="user">JavaScript</span>于<span class="date-time">2015-12-02 10:11:11</span>编辑</span>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment give">
+                    <h1><i class="fa fa-circle-o"></i>打赏:<img src="images/arw.gif" /></h1>
+                    <div class="list">
+                        <span class="user"><label>参与</label></span>
+                        <span class="money"><label>金币</label><i class="total-money">+<i>18</i></i> </span>
+                        <span class="reason"><label>理由</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_11.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_46.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_33.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_4.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="edit-by-user">
+                    <span>本贴最后由<span class="user">JavaScript</span>于<span class="date-time">2015-12-02 10:11:11</span>编辑</span>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment give">
+                    <h1><i class="fa fa-circle-o"></i>打赏:<img src="images/arw.gif" /></h1>
+                    <div class="list">
+                        <span class="user"><label>参与</label></span>
+                        <span class="money"><label>金币</label><i class="total-money">+<i>18</i></i> </span>
+                        <span class="reason"><label>理由</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_11.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_46.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_33.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_5.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="edit-by-user">
+                    <span>本贴最后由<span class="user">JavaScript</span>于<span class="date-time">2015-12-02 10:11:11</span>编辑</span>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment give">
+                    <h1><i class="fa fa-circle-o"></i>打赏:<img src="images/arw.gif" /></h1>
+                    <div class="list">
+                        <span class="user"><label>参与</label></span>
+                        <span class="money"><label>金币</label><i class="total-money">+<i>18</i></i> </span>
+                        <span class="reason"><label>理由</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_11.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_46.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_33.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_6.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="edit-by-user">
+                    <span>本贴最后由<span class="user">JavaScript</span>于<span class="date-time">2015-12-02 10:11:11</span>编辑</span>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment give">
+                    <h1><i class="fa fa-circle-o"></i>打赏:<img src="images/arw.gif" /></h1>
+                    <div class="list">
+                        <span class="user"><label>参与</label></span>
+                        <span class="money"><label>金币</label><i class="total-money">+<i>18</i></i> </span>
+                        <span class="reason"><label>理由</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_11.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_46.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                    <div class="list item">
+                        <span class="user item">
+                            <img class="head-picture" src="images/head/head_33.jpg" />
+                            <a href="javascript:;" class="author">JavaScript</a>
+                        </span>
+                        <span class="money item"><label>+<i>6</i></label></span>
+                        <span class="reason item"><label>挺好的</label></span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_7.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_8.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_9.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_10.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <dl>
+            <dt>
+            <div class="author-name">
+                <a href="javascript:;">JavaScript</a>
+            </div>
+            <div class="head-picture">
+                <img src="images/head/head_12.jpg" />
+            </div>
+            <div class="money">
+                <div>
+                    <i>188</i><span>主题</span>
+                </div>
+                <div>
+                    <i>69013</i><span>贴子</span>
+                </div>
+                <div>
+                    <i>90167</i><span>金币</span>
+                </div>
+            </div>
+            <div class="position">
+                <span>普通会员</span>
+            </div>
+            <div class="user-level">
+                <!--<span>管理员</span>-->
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <div class="message">
+                <a href="javascript:;"><i class="fa fa-envelope-o"></i> 发消息</a>
+            </div>
+            </dt>
+            <dd>
+                <div class="create-time">
+                    <div class="create-time-container">
+                        <div class="left">
+                            <span class="fa fa-user user-icon"></span>发表于<span class="date-time">2015-11-30 23:00:00</span>
+                            <span class="space">|</span>
+                            <a href="javascript:;" class="only-author">只看该作者</a>
+                        </div>
+                        <div class="right">
+                            <a href="javascript:;" class="move">移动</a>
+                            <a href="javascript:;" class="edit">编辑</a>
+                            <a href="javascript:;" class="delete">删除</a>
+                            <span class="storey"><i>1</i><span class="symbol">#</span></span>
+                            <span>直达</span><input type="text" class="storey-input" /><i class="send fa fa-send-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="article-text">
+                    好多人想要学习前端……自学或者培训那么我们在学习过程中到底需要掌握那些基础知识呢！下面分类了JS中必备的知识也是必须要了解学会的！看一看你是否已经将JS的基础知识都了如指掌了呢？
+                    事件:
+                    onmousedown 鼠标按下
+                    onmouseup   鼠标抬起
+                    onmouseover  鼠标移入
+                    onmouseout   鼠标移除
+                    onmousemove 鼠标移动
+                    onclick       点击事件
+                    onfocus      获得焦点
+                </div>
+                <div class="comment">
+                    <h1><i class="fa fa-circle-o"></i>评论:<img src="images/arw.gif" /></h1>
+                    <ul>
+                        <li><img class="head-picture" src="images/head/head_11.jpg" /><a href="javascript:;" class="author">JavaScript</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_39.jpg" /><a href="javascript:;" class="author">Android</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                        <li><img class="head-picture" src="images/head/head_19.jpg" /><a href="javascript:;" class="author">Struts</a>:
+                            <span class="text">那么我们在学习过程中到底需要掌握那些基础知识呢！</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="replay-and-complaint">
+                    <div>
+                        <a href="javascript:;" class="comment"><i class="replay-icon fa fa-coffee"></i>评论</a>
+                        <a href="javascript:;" class="replay"><i class="replay-icon fa fa-commenting"></i>回复</a>
+                        <a href="javascript:;" class="give"><i class="replay-icon fa fa-rmb"></i>打赏</a>
+                        <a href="javascript:;" class="complaint">举报</a>
+                    </div>
+                </div>
+            </dd>
+            <div class="clearfix"></div>
+        </dl>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="replay-content">
+        <div class="replay-textarea">
+            <div class="replay-toolbar">
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+                <span class="four"></span>
+                <span class="five"></span>
+                <span class="six"></span>
+                <span class="seven"></span>
+                <span class="eight"></span>
+                <span class="nine"></span>
+                <a href="javascript:;">高级模式</a>
+            </div>
+            <div class="login">
+                <span>您需要登录后才可以发贴<a href="javascript:;">登录</a><i class="space">|</i><a href="javascript:;">注册</a><a href="javascript:;"><img src="images/qq_login.gif" /></a></span>
+            </div>
+        </div>
+        <div class="replay-btn">
+            <a href="javascript:;">发表回复</a>
+            <label class="redirect-last-page" for="redirect-last-page"><input type="checkbox" id="redirect-last-page" />回贴后步转到最后一页</label>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+<footer class="footer">
+    <div class="footer-box">
+        <dl>
+            <dt>我们</dt>
+            <dd><a href="javascript:;">关于我们</a></dd>
+            <dd><a href="javascript:;">注册协议</a></dd>
+            <dd><a href="javascript:;">版权隐私</a></dd>
+            <dd><a href="javascript:;">免责声明</a></dd>
+            <dd><a href="javascript:;">投诉建议</a></dd>
+        </dl>
+        <dl>
+            <dt>商务</dt>
+            <dd><a href="javascript:;">广告推广</a></dd>
+            <dd><a href="javascript:;">招聘服务</a></dd>
+        </dl>
+        <dl>
+            <dt>微博</dt>
+            <dd><a href="javascript:;">腾讯微博</a></dd>
+            <dd><a href="javascript:;">新浪微博</a></dd>
+        </dl>
+        <dl>
+            <dt>合作伙伴</dt>
+            <dd><a href="javascript:;">微软</a></dd>
+            <dd><a href="javascript:;">谷歌</a></dd>
+        </dl>
+        <div class="copyright">
+            <p class="row1">
+                中国第一Web前端开发综合性网站，汇聚了广大中国Web前端开发工程师，并为工程师及企业提供优质的前端资源和服务，是国内前端开发最贴心的综合服务平台。业务涉及：前端招聘、人才推荐、前端神器、教程素材、开发工具、学习服务等诸多前端产业。
+            </p>
+            <p class="row2">Copyright © abc.com All Rights Reserved</p>
+            <p class="row3">粤ICP备10055601号-2</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+</body>
+</html>

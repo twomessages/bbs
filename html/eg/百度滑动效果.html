@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style>
+        *{margin:0;padding:0;}
+        .box{margin-left:50px;}
+        li{ list-style:none;}
+        .box ul li{width:800px;height:344px;border-left:1px dotted #666666;position:relative;}
+        .box2{height:500px;}
+        .box3{height:2000px;}
+        .box ul li a{line-height:32px; text-align:center;color:#fff;background:url(http://img.baidu.com/img/iknow/exp/global/step_ico_bg.png) no-repeat left top;width:32px;height:32px;display:block;position:absolute;left:-16px;top:0;}
+        .icon_link{position:fixed;top:0;left:34px;}
+        .icon_link a{line-height:32px; text-align:center;color:#fff;background:url(http://img.baidu.com/img/iknow/exp/global/step_ico_bg.png) no-repeat left -68px;width:32px;height:32px;display:block;display:none;}
+
+        .icon_link a.current{background-position:0 0;}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="mousewheel.js"></script>
+    <script>
+        $(function(){
+            var $window = $(window);
+            var iconList = $('.icon_link a');
+            var aList = $('ul a');
+            aList.each(function(index,em){
+                $(this).attr('top',index*32);
+            });
+            $window.scroll(function(){
+                var scrollTop = $window.scrollTop();
+                if(($('ul a:last').offset().top+ $('ul li:last').outerHeight()) - scrollTop-150 <= 0){
+                    aList.css('visibility','visible');
+                    iconList.css('display','none');
+                    return;
+                }
+                aList.each(function(index,em){
+                    if(aList.eq(index).offset().top - scrollTop <= aList.eq(index).attr('top')){
+                        aList.eq(index).css('visibility','hidden');
+                        iconList.removeClass('current');
+                        iconList.eq(index).addClass('current').css('display','block');
+                    }else{
+                        aList.eq(index).css('visibility','visible');
+                        iconList.eq(index).removeClass('current').css('display','none');
+                    }
+                });
+
+            });
+            iconList.click(function(){
+                var i = $(this).index();
+                var t = $('ul li').eq(i).offset().top;
+                $('body,html').stop().animate({scrollTop:t});
+            });
+        })
+    </script>
+</head>
+
+<body>
+<div class="box">
+    <div class="box2"></div>
+    <ul>
+        <li id="icon1"><a>1</a><img src="http://hiphotos.baidu.com/exp/w=500/sign=ab84830bc9ea15ce41eee00986013a25/203fb80e7bec54e79e6ef790b9389b504ec26aba.jpg"></li>
+        <li id="icon2"><a>2</a><img src="http://hiphotos.baidu.com/exp/w=500/sign=8ca475112edda3cc0be4b82031e83905/5fdf8db1cb134954ceb104ea564e9258d0094a95.jpg"></li>
+        <li id="icon3"><a>3</a><img src="http://hiphotos.baidu.com/exp/w=500/sign=33fa75d0ddc451daf6f60ceb86fc52a5/b64543a98226cffc3638523cb9014a90f603ea2a.jpg"></li>
+    </ul>
+    <div>end</div>
+    <div class="icon_link">
+        <a href="javascriptl:;" class="icon1">1</a>
+        <a href="javascriptl:;" class="icon2">2</a>
+        <a href="javascriptl:;" class="icon3">3</a>
+    </div>
+    <div class="box3"></div>
+</div>
+</body>
+</html>

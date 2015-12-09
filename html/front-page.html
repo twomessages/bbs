@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="lib/mapfish/mapfish.js" type="text/javascript" charset="UTF-8"></script>
+    <link rel="stylesheet" type="text/css" href="lib/fonts/font-awesome.min.css">
+    <link href="lib/mapfish/mapfish.css" type="text/css" rel="stylesheet" />
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/front.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function(){
+            var timer = null;
+            $(".search-box .search-type").mouseover(function(){
+                clearInterval(timer);
+                $(".search-box ul").css({"display":"block"});
+            }).mouseout(function(){
+                timer = setTimeout(function(){
+                    $(".search-box ul").css("display","none");
+                },100);
+            });
+
+            $(".search-box ul").mouseover(function(){
+                clearInterval(timer);
+            }).mouseout(function(){
+                timer = setTimeout(function(){
+                    $(".search-box ul").css("display","none");
+                },100);
+            });
+            $(".search-box ul li").click(function(){
+                $(".search-box .search-type text").text($(this).text());
+                $(".search-box ul").css("display","none");
+            });
+        })
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-box">
+        <h1 class="header-logo">LOGO</h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">社区</a></li>
+                <li><a href="notes.html">笔记</a></li>
+                <li><a href="ask.html">问问</a></li>
+                <li class="active"><a href="front.html">前端</a></li>
+                <li><a href="javascript:;">技术</a></li>
+                <li><a href="javascript:;">教程</a></li>
+                <li><a href="javascript:;">资源</a></li>
+                <li><a href="javascript:;">招聘</a></li>
+                <li><a href="javascript:;">我的前端</a></li>
+                <li><a href="javascript:;">更多</a></li>
+            </ul>
+            <div class="header-loginbar">
+                <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
+            </div>
+        </nav>
+    </div>
+    <div class="clearfix"></div>
+</header>
+<div class="search">
+    <div class="search-box">
+        <input type="text" placeholder="请输入搜索内容" />
+        <span class="search-type"><text>帖子</text><i class="fa fa-caret-down"></i></span>
+        <ul>
+            <li>帖子</li>
+            <li>用户</li>
+        </ul>
+        <span class="search-btn"><i class="fa fa-search"></i> </span>
+        <dl>
+            <dt>热搜:</dt>
+            <dd><a href="javascript:;">Canvas</a></dd>
+            <dd><a href="javascript:;">WebGL</a></dd>
+            <dd><a href="javascript:;">CSS3</a></dd>
+            <dd><a href="javascript:;">WebSocket</a></dd>
+            <dd><a href="javascript:;">离线存储</a></dd>
+        </dl>
+    </div>
+</div>
+
+<section class="content">
+    <div class="current-path">
+        <a href="javascript:;"><i class="fa fa-home"></i></a>
+        <span class="fa fa-angle-right"></span>
+        <a href="javascript:;">前端</a>
+        <span class="fa fa-angle-right"></span>
+        <a href="javascript:;">互联网事</a><span class="fa fa-angle-right"></span>
+        <a href="javascript:;">查看内容</a>
+    </div>
+    <div class="front-end-left">
+        <nav class="categories">
+            <ul>
+                <li class="active"><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">互联网事</a></li>
+                <li><a href="javascript:;">前端资源</a></li>
+                <li><a href="javascript:;">经验技巧</a></li>
+                <li><a href="javascript:;">设计创意</a></li>
+            </ul>
+        </nav>
+        <div class="front-end-page">
+            <div class="title">
+                <p class="row1">
+                    <a href="javascript:;">搜寻体感极客 参加2015 Intel RealSense应用挑战赛赢百万美金</a>
+                </p>
+                <p class="row2">
+                    <a href="javascript:;" class="article-category">互联网事</a>
+                    <i class="space">|</i>
+                    <a href="javascript:;" class="author">前端小编</a>
+                    <span class="desc">发布于</span>
+                    <span class="date-time">2015-12-03 11:12:01</span>
+                    <span class="view-count">查看:<i>8693</i></span>
+                    <span class="comment">评论:<i>16</i></span>
+                </p>
+            </div>
+            <div class="article-content">
+                RealSense这一单词对于英文苦手的玩家们来说，可能一时间想不出其含义，而提起近年来在游戏机及智能家电领域极为火爆的体感技术，则令无数玩家为之兴奋，没错，Intel近年来关注RealSense技术，
+                在年初的IDF2014及CES2014上，来自Intel RealSense 3D虚拟摄像头体感技术的多项创新应用被演示。
+                当指尖跳跃在虚拟电子琴之上，当电脑不再冰冷，而化作能感知人类心理的情绪感应器，这些令人惊奇的功能无不验证着人机动作交互所带来的创新体验与无限可能。<br/>
+                <img src="images/article_images/2.jpg" />
+                RealSense技术使人机交互取得突破性发展，Intel作为一家充满活力的创新型企业注重开源、创意与应用价值，本次Intel RealSense应用挑战赛于2014年7月28日如约而至，目前报名工作已经全面启动，
+                作为针对体感技术二次开发的一次全球顶尖盛会，Intel RealSense应用挑战赛将汇聚来自全球RealSense开发高手为个人电脑开发令人惊叹的全新功能，通过大赛将在全球范围内推广Intel RealSense技术，
+                开发者们通过英特尔软件开发套件（SDK）、英特尔感知计算软件开发套件和全新的 3D 手势摄像头构思创意，创建应用，以创新的方式在台式机、
+                笔记本电脑和平板电脑等计算设备上应用此项技术，实现技术层面的交流、切磋与共享。<br/>
+                在创意阶段，比赛组别由Pioneer（开发者组别）及Ambassador（邀请制组别）组成，两个组别选手将进行软件开发创意阶段及开发阶段的全球角逐，
+                将有1,000位Pioneer Track参赛者和300位Ambassador Track参赛者脱颖而出，参加到2014年11月14日至2015年1月10日的开发阶段比赛。最终，
+                来自两个组别的选手最高将获得50,000美元及100,000万美元大奖。本次竞赛所有选手将取得总价值近 1 百万美元的现金和奖品。
+                英特尔RealSense开发套件由Intel第四代及未来的Intel酷睿处理器、Microsoft Windows7和8以及C++、C#高级编程语言组成，通过Intel英特尔软件开发套件（SDK）和全新的 3D 手势摄像头设备作为输入设备，形成完整的体感组合，
+                参加Intel RealSense应用挑战赛的选手们目标是通过上述体感套件开发面向游戏与娱乐、学习与教育娱乐、自然互动、沉浸式协作/创作及开放创新等五方面的软件应用。<br/>
+                全新的Intel体感摄像头通过采集用户动作，为家用PC带来全球最先进的体感功能。英特尔® RealSense™ 3D 摄像头重新定义了控制设备的方式，在游戏、娱乐和内容创建交互方面实现新的突破。该摄像头配有一流的全1080p彩色深度传感器，帮助 PC 和平板电脑实现逼真的三维视觉体验。面部分析、手部和手指追踪、语音识别、背景减除和增强现实等功能使交互更加直观，从而实现灵活的设备操控，从此，PC的人机交互将不仅仅停留在代码、输入、点触、拖拽等简单交互上，更加立体与直观的3D体感功能将融入PC，
+                来自全球的PC用户将利用这一创新交互方式感受全球最先进的计算机应用体验。<br/>
+                当前，诸多拥有创新理念的的开发者们已经利用英特尔RealSense技术开发出如《A Million Minions》、《Kung Pow Kevin》、《Lightning》等PC体感游戏的DEMO，并供全球开发者们下载体验，
+                作为开发者的您是否跃跃欲试？Intel RealSense应用挑战赛报名已经开始，报名及更多比赛详情，请查阅Intel RealSense应用挑战赛网站<br />
+            </div>
+            <div class="views">
+                <ul>
+                    <li>
+                        <p class="count"><span style="height:28px;"></span></p>
+                        <p class="number">0</p>
+                        <a class="desc" href="javascript:;"><img src="images/article_images/1.gif" />好文章</a>
+                    </li>
+                    <li>
+                        <p class="count"><span style="height:3px;"></span></p>
+                        <p class="number">0</p>
+                        <a class="desc" href="javascript:;"><img src="images/article_images/2.gif" />学到啦</a>
+                    </li>
+                    <li>
+                        <p class="count"><span style="height:99px;"></span></p>
+                        <p class="number">0</p>
+                        <a class="desc" href="javascript:;"><img src="images/article_images/3.gif" />赶紧学</a>
+                    </li>
+                    <li>
+                        <p class="count"><span style="height:33px;"></span></p>
+                        <p class="number">0</p>
+                        <a class="desc" href="javascript:;"><img src="images/article_images/4.gif" />小困惑</a>
+                    </li>
+                    <li>
+                        <p class="count"><span style="height:6px;"></span></p>
+                        <p class="number">0</p>
+                        <a class="desc" href="javascript:;"><img src="images/article_images/5.gif" />我想想</a>
+                    </li>
+                </ul>
+                <div class="friends">
+                    <h2>刚表过态的朋友(<i class="friends-count">81</i>)</h2>
+                    <ol>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_15.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_19.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_18.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_13.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_16.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_28.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_23.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_27.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_51.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_39.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_59.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_60.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_46.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_47.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/head/head_52.jpg" />
+                                <p class="user-name">JavaScript</p>
+                            </a>
+                        </li>
+                    </ol>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="newest-comment">
+                    <h2>最新评论</h2>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_10.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                西安乐来网络科技有限公司 诚聘：web前端开发 2名，工作地西安市高新区，双休，社保，妹纸通通有，薪资面议，
+                                有意向可投简历至 3060999713@qq.com
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_13.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                很少项目使用 JS 来写界面，更少使用 MVC 框架，这点其实在很多公司都差不多，比如某 B 也是一样的，除了地图及广告管家等产品，其它产品基本上都是通过模板生成的 . 产品通过模板生成啥意思?里面没有JS么?
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_16.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                很少项目使用 JS 来写界面，更少使用 MVC 框架，这点其实在很多公司都差不多，比如某 B 也是一样的，除了地图及广告管家等产品，其它产品基本上都是通过模板生成的 . 产品通过模板生成啥意思?里面没有JS么?
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_24.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                很少项目使用 JS 来写界面，更少使用 MVC 框架，这点其实在很多公司都差不多，比如某 B 也是一样的，除了地图及广告管家等产品，其它产品基本上都是通过模板生成的 . 产品通过模板生成啥意思?里面没有JS么?
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_25.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                很少项目使用 JS 来写界面，更少使用 MVC 框架，这点其实在很多公司都差不多，比如某 B 也是一样的，除了地图及广告管家等产品，其它产品基本上都是通过模板生成的 . 产品通过模板生成啥意思?里面没有JS么?
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_34.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                很少项目使用 JS 来写界面，更少使用 MVC 框架，这点其实在很多公司都差不多，比如某 B 也是一样的，除了地图及广告管家等产品，其它产品基本上都是通过模板生成的 . 产品通过模板生成啥意思?里面没有JS么?
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                    <dl class="newest-comment-list">
+                        <dt><img src="images/head/head_37.jpg" /></dt>
+                        <dd>
+                            <p class="title">
+                                <a href="javascript:;">JavaScript</a><span class="date-time">2015-12-03 13:10:01</span>
+                            </p>
+                            <p class="comment-content">
+                                很少项目使用 JS 来写界面，更少使用 MVC 框架，这点其实在很多公司都差不多，比如某 B 也是一样的，除了地图及广告管家等产品，其它产品基本上都是通过模板生成的 . 产品通过模板生成啥意思?里面没有JS么?
+                            </p>
+                        </dd>
+                        <div class="clearfix"></div>
+                    </dl>
+                </div>
+            </div>
+            <div class="replay-content">
+                <div class="replay-textarea">
+                    <div class="replay-toolbar">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                        <span class="four"></span>
+                        <span class="five"></span>
+                        <span class="six"></span>
+                        <span class="seven"></span>
+                        <span class="eight"></span>
+                        <span class="nine"></span>
+                        <a href="javascript:;">高级模式</a>
+                    </div>
+                    <div class="login">
+                        <span>您需要登录后才可以发贴<a href="javascript:;">登录</a><i class="space">|</i><a href="javascript:;">注册</a><a href="javascript:;"><img src="images/qq_login.gif" /></a></span>
+                    </div>
+                </div>
+                <div class="replay-btn">
+                    <a href="javascript:;">评论</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="front-end-right">
+        <div class="recommend">
+            <h1>推荐文章</h1>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/2.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/8.png" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/3.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/5.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/6.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="recommend">
+            <h1>视频教程</h1>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/2.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/8.png" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/3.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/5.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <img src="images/article_images/6.jpg" />
+                        </dt>
+                        <dd>
+                            <a href="javascript:;">11个超炫的视差滚动网站欣赏11个超炫的视差滚动网站欣赏</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="recommend ranking-list">
+            <h1>浏览排行</h1>
+            <ul>
+                <li><i class="num r1">1</i><a href="front-page.html" class="article-title">Flex 布局教程：语法篇</a> </li>
+                <li><i class="num r2">2</i><a href="front-page.html" class="article-title">多重边框--只用一个DIV</a> </li>
+                <li><i class="num r3">3</i><a href="front-page.html" class="article-title">我再说说正则表达式，求顶啊</a> </li>
+                <li><i class="num r4">4</i><a href="front-page.html" class="article-title">我也来说说设计模式</a> </li>
+                <li><i class="num r5">5</i><a href="front-page.html" class="article-title">项目总结—首篇（目录）</a> </li>
+                <li><i class="num r6">6</i><a href="front-page.html" class="article-title">谷歌适配插件-----window resizer</a> </li>
+                <li><i class="num r7">7</i><a href="front-page.html" class="article-title">返回顶部</a> </li>
+                <li><i class="num r8">8</i><a href="front-page.html" class="article-title">JavaScript设计模式</a> </li>
+                <li><i class="num r9">9</i><a href="front-page.html" class="article-title">URL链接中的utm_source,utm_medium简析</a> </li>
+                <li><i class="num r10">10</i><a href="front-page.html" class="article-title">前端css笔记</a> </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</section>
+<footer class="footer">
+    <div class="footer-box">
+        <dl>
+            <dt>我们</dt>
+            <dd><a href="javascript:;">关于我们</a></dd>
+            <dd><a href="javascript:;">注册协议</a></dd>
+            <dd><a href="javascript:;">版权隐私</a></dd>
+            <dd><a href="javascript:;">免责声明</a></dd>
+            <dd><a href="javascript:;">投诉建议</a></dd>
+        </dl>
+        <dl>
+            <dt>商务</dt>
+            <dd><a href="javascript:;">广告推广</a></dd>
+            <dd><a href="javascript:;">招聘服务</a></dd>
+        </dl>
+        <dl>
+            <dt>微博</dt>
+            <dd><a href="javascript:;">腾讯微博</a></dd>
+            <dd><a href="javascript:;">新浪微博</a></dd>
+        </dl>
+        <dl>
+            <dt>合作伙伴</dt>
+            <dd><a href="javascript:;">微软</a></dd>
+            <dd><a href="javascript:;">谷歌</a></dd>
+        </dl>
+        <div class="copyright">
+            <p class="row1">
+                中国第一Web前端开发综合性网站，汇聚了广大中国Web前端开发工程师，并为工程师及企业提供优质的前端资源和服务，是国内前端开发最贴心的综合服务平台。业务涉及：前端招聘、人才推荐、前端神器、教程素材、开发工具、学习服务等诸多前端产业。
+            </p>
+            <p class="row2">Copyright © abc.com All Rights Reserved</p>
+            <p class="row3">粤ICP备10055601号-2</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+</body>
+</html>

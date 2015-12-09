@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="lib/mapfish/mapfish.js" type="text/javascript" charset="UTF-8"></script>
+<link rel="stylesheet" type="text/css" href="lib/fonts/font-awesome.min.css">
+<link href="lib/mapfish/mapfish.css" type="text/css" rel="stylesheet" />
+<link href="css/common.css" type="text/css" rel="stylesheet" />
+<link href="css/index.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+    $(function(){
+        var timer = null;
+        $(".search-box .search-type").mouseover(function(){
+            clearInterval(timer);
+            $(".search-box ul").css({"display":"block"});
+        }).mouseout(function(){
+            timer = setTimeout(function(){
+                $(".search-box ul").css("display","none");
+            },100);
+        });
+
+        $(".search-box ul").mouseover(function(){
+            clearInterval(timer);
+        }).mouseout(function(){
+            timer = setTimeout(function(){
+                $(".search-box ul").css("display","none");
+            },100);
+        });
+        $(".search-box ul li").click(function(){
+            $(".search-box .search-type text").text($(this).text());
+            $(".search-box ul").css("display","none");
+        });
+    })
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<header class="header">
+		<div class="header-box">
+			<h1 class="header-logo">LOGO</h1>
+			<nav class="header-nav">
+				<ul>
+					<li class="active"><a href="index.html">社区</a></li>
+                    <li><a href="notes.html">笔记</a></li>
+                    <li><a href="ask.html">问问</a></li>
+                    <li><a href="front.html">前端</a></li>
+                    <li><a href="javascript:;">技术</a></li>
+                    <li><a href="javascript:;">教程</a></li>
+                    <li><a href="javascript:;">资源</a></li>
+                    <li><a href="javascript:;">招聘</a></li>
+                    <li><a href="javascript:;">我的前端</a></li>
+                    <li><a href="javascript:;">更多</a></li>
+				</ul>
+                <div class="header-loginbar">
+                    <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
+                </div>
+			</nav>
+		</div>
+        <div class="clearfix"></div>
+	</header>
+    <div class="search">
+        <div class="search-box">
+            <input type="text" placeholder="请输入搜索内容" />
+            <span class="search-type"><text>帖子</text><i class="fa fa-caret-down"></i></span>
+            <ul>
+                <li>帖子</li>
+                <li>用户</li>
+            </ul>
+            <span class="search-btn"><i class="fa fa-search"></i> </span>
+            <dl>
+                <dt>热搜:</dt>
+                <dd><a href="javascript:;">Canvas</a></dd>
+                <dd><a href="javascript:;">WebGL</a></dd>
+                <dd><a href="javascript:;">CSS3</a></dd>
+                <dd><a href="javascript:;">WebSocket</a></dd>
+                <dd><a href="javascript:;">离线存储</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="current-path">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <span class="fa fa-angle-right"></span>
+            <a href="index.html">社区</a>
+        </div>
+        <div class="topic-info">
+            <i class="fa fa-bar-chart icon"></i>
+            <span class="today">今日:<i>811</i></span>
+            <span class="yesterday">昨日:<i>6099</i></span>
+            <span class="article">帖子:<i>13819</i></span>
+            <span class="member">会员:<i>9001856</i></span>
+            <span class="new-member">欢迎新会员:<a href="javascript:;">txx</a></span>
+        </div>
+        <div class="forum-topic-list">
+            <h1 class="title">Web前端<i class="fa fa-angle-double-up"></i> </h1>
+            <dl>
+                <dt><i class="fa fa-comment-o"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">HTML/CSS</a><i>89</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-ioxhost"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">JavaScript/Jquery</a><i>6801</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-delicious"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">AngularJS</a><i>1971</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-cloud"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">NodeJS</a><i>879</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-cloud"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">求助/问问</a><i>879</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+        <div class="forum-topic-list">
+            <h1 class="title">Java技术<i class="fa fa-angle-double-up"></i> </h1>
+            <dl>
+                <dt><i class="fa fa-comment-o"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">Java EE</a><i>89</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-delicious"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">Spring/Struts2/Hibernate</a><i>1971</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-ioxhost"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">SpringMVC/MyBatis</a><i>6801</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-cloud"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">Eclipse/MyEclipse</a><i>879</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+        <div class="forum-topic-list">
+            <h1 class="title">数据库<i class="fa fa-angle-double-up"></i> </h1>
+            <dl>
+                <dt><i class="fa fa-comment-o"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">MySQL</a><i>89</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-delicious"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">Oracle</a><i>1971</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-ioxhost"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">MS-SQL Server</a><i>6801</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-twitter"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">MongoDB</a><i>5678</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-cloud"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">PostgreSQL</a><i>879</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><i class="fa fa-yelp"></i> </dt>
+                <dd class="forum-topic-desc">
+                    <h1><a href="topic.html">其他数据库</a><i>1168</i></h1>
+                    <p>话题:<i class="topic-total">981</i>,帖数:<i class="article-total">8619</i></p>
+                    <p><a href="javascript:;" class="article-title">互联网真的离钱很远吗？</a><span class="create-time">3小时前</span><a href="javascript:;" class="author">张无忌</a></p>
+                </dd>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-box">
+            <dl>
+                <dt>我们</dt>
+                <dd><a href="javascript:;">关于我们</a></dd>
+                <dd><a href="javascript:;">注册协议</a></dd>
+                <dd><a href="javascript:;">版权隐私</a></dd>
+                <dd><a href="javascript:;">免责声明</a></dd>
+                <dd><a href="javascript:;">投诉建议</a></dd>
+            </dl>
+            <dl>
+                <dt>商务</dt>
+                <dd><a href="javascript:;">广告推广</a></dd>
+                <dd><a href="javascript:;">招聘服务</a></dd>
+            </dl>
+            <dl>
+                <dt>微博</dt>
+                <dd><a href="javascript:;">腾讯微博</a></dd>
+                <dd><a href="javascript:;">新浪微博</a></dd>
+            </dl>
+            <dl>
+                <dt>合作伙伴</dt>
+                <dd><a href="javascript:;">微软</a></dd>
+                <dd><a href="javascript:;">谷歌</a></dd>
+            </dl>
+            <div class="copyright">
+                <p class="row1">
+                    中国第一Web前端开发综合性网站，汇聚了广大中国Web前端开发工程师，并为工程师及企业提供优质的前端资源和服务，是国内前端开发最贴心的综合服务平台。业务涉及：前端招聘、人才推荐、前端神器、教程素材、开发工具、学习服务等诸多前端产业。
+                </p>
+                <p class="row2">Copyright © abc.com All Rights Reserved</p>
+                <p class="row3">粤ICP备10055601号-2</p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+</body>
+</html>

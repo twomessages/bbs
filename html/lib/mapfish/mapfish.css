@@ -1,0 +1,10 @@
+/*global*/
+*{margin:0;padding:0;}
+li{list-style:none;}
+a,a:visited,a:hover,a:active{text-decoration:none;}
+input:focus{outline:0;}
+.clear{clear:both;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+/********/
+.mbtn-default{line-height:13px;font-size:13px;color:#666;padding:6px 11px;border:1px solid #ddd;border-radius:6px;background-color:transparent;cursor:pointer;}
+.mbtn-default:hover{border:1px solid #aaa;}
