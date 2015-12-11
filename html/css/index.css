@@ -1,15 +1,15 @@
 /*content*/
-.content{width:1228px;border:1px solid #c2d5e3;box-shadow:0 0 3px 3px rgba(66,66,66,0.2);}
+.content{width:1230px;box-shadow:0 0 3px 3px rgba(66,66,66,0.2);}
 .forum-topic-list .title{height:31px;line-height:31px;padding:0 0 0 16px;font-weight:bold;
-    background:url(../images/titlebg.png);color:#369;position:relative;font-size:14px;
-    text-shadow:3px 3px 3px rgba(66,66,66,0.5);border-top:1px solid #e8e8e8;border-bottom:1px solid #d8d8d8;
+    background:url(../images/titlebg.png);color:#006293;position:relative;font-size:14px;
+    text-shadow:2px 2px 2px rgba(66,66,66,0.6);border-top:1px solid #e8e8e8;border-bottom:1px solid #d8d8d8;
 }
 .forum-topic-list .title i{position:absolute;right:10px;top:8px;font-size:16px;cursor:pointer;text-shadow:3px 3px 3px rgba(66,66,66,0.5);color:#999;}
 .forum-topic-list dl{position:relative;padding:20px;width:369px;height:68px;float:left;}
 .forum-topic-list dl dt{width:30px;text-align:center;}
 .forum-topic-list dl dt i{font-size:30px;color:#3ba1f0;text-shadow:3px 3px 3px rgba(66,66,66,0.5);}
 .forum-topic-list dl dd{position:absolute;left:66px;top:16px;}
-.forum-topic-desc h1 a{color:#444;line-height:28px;font-size:14px;}
+.forum-topic-desc h1 a{color:#333;line-height:28px;font-size:14px;}
 .forum-topic-desc h1 i{color:#f09307;font-weight:100;border:1px solid #f09307;border-radius:6px;padding:2px 5px;border-top:none;border-bottom:none;
     margin:0 6px;
 }

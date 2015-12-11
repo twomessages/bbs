@@ -1,5 +1,5 @@
 /*????*/
-.article-content{width:1228px;}
+.article-content{width:1230px;}
 .article-content dl{background: #e8eff5;position:relative;}
 .article-content dl dt{width:168px;min-height:333px;float:left;}
 .article-content dl dt .view-info{height:39px;line-height:39px;text-align:center;}
@@ -33,7 +33,7 @@
 
 
 /**/
-.article-content dl dd{width:1059px;float:left;min-height:333px;background:#fff;border-left:1px solid #c2d5e3;}
+.article-content dl dd{width:1061px;float:left;min-height:333px;background:#fff;border-left:1px solid #c2d5e3;}
 .article-content dl dd .title{height:39px;line-height:39px;padding:0 28px;}
 .article-content dl dd .title .type{color:#2661a3;margin:0 8px 0 0;}
 .article-content dl dd .title .text{color:#333;font-weight:bold;}
@@ -42,7 +42,7 @@
 .article-content .create-time .left{width:666px;float:left;}
 .article-content .create-time .left .user-icon{color: #f09307;font-size:18px;width:16px;display:inline-block;margin-right:8px;}
 .article-content .create-time .left .date-time{margin:0 8px;}
-.article-content .create-time .left .space{margin:0 10px;position:relative;top:-1px;}
+.article-content .create-time .left .space{margin:0 10px;position:relative;top:-1px;color:#999;}
 .article-content .create-time .left .only-author{color:#2661a3;}
 .article-content .create-time .left .only-author:hover{text-decoration:underline;}
 .article-content .create-time .right{width:266px;float:right;color:#333;text-align:right;}
