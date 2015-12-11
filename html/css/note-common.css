@@ -1,0 +1,77 @@
+/*notes-top*/
+.notes-top{width:100%;height:315px;
+    position:relative;
+}
+.notes-top-content{width:1230px;height:315px;margin:0 auto;position:relative;background:url(../images/title-yellow.png) no-repeat top;}
+.notes-top-content h1{position:absolute;bottom:210px;left:41px;font-size:23px;color:#fff;
+    text-shadow:2px 2px 2px rgba(66,66,66,0.6);
+}
+.notes-top-content h2{position:absolute;bottom:180px;left:41px;font-size:16px;color:#fff;
+    text-shadow:2px 2px 2px rgba(66,66,66,0.6);font-weight:100;
+}
+.notes-top nav{position:absolute;bottom:0;width:100%;height:36px;}
+.notes-top nav ul{width:1230px;margin:0 auto;background:#006293;height:36px;}
+.notes-top nav ul li{float:left;height:36px;line-height:36px;}
+.notes-top nav ul li a{color:#fff;padding:0 31px;}
+.notes-top nav ul li:hover,.notes-top nav ul li.active{background:#f09307;}
+.notes-top nav ul li:hover a{text-decoration:none;}
+
+
+/*note-common*/
+.note-list-left,.note-content-left{width:270px;float:left;margin:0 10px 0 0;}
+.note-list-right,.note-content-right{width:950px;float:right;}
+
+/*blog home page left*/
+/*personal-data*/
+.personal-data{background:#fff;padding:0 0 36px 0;margin:0 0 16px 0;box-shadow:1px 0 3px rgba(66,66,66,0.4);border-top:none;border-left:none;}
+.personal-data h1{height:31px;line-height:31px;padding:0 0 0 10px;background:url(../images/titlebg.png) repeat-x top;
+    text-shadow:2px 2px 2px rgba(66,66,66,0.6);box-shadow:1px 1px 2px rgba(66,66,66,0.6);
+}
+.personal-data img{display:block;margin:36px auto 8px auto;width:128px;height:128px;border:13px solid #fff;
+    box-shadow:2px 2px 2px rgba(66,66,66,0.6);
+}
+.personal-data .user-name{padding:0 0 16px 0;text-align:center;}
+.personal-data .user-name a{text-decoration:none;font-size:23px;color:#f08253;}
+.personal-data .add-friends{display:block;text-align:center;border-bottom:1px dashed #c2d5e3;
+    margin:0 26px;padding:0 0 36px 0;
+}
+.personal-data .add-friends a i{display:inline-block;width:16px;line-height:23px;margin:0 6px 0 0;color:#fff;}
+.personal-data .add-friends a{text-decoration:none;padding:6px 8px;background:#999;color:#fff;}
+.personal-data .add-friends a:nth-child(1){margin:0 8px 0 0;}
+
+.personal-data .user-level{padding:16px 26px 10px 26px;}
+.personal-data .user-level i{color:#f09307;font-size:16px;}
+.personal-data .item{padding:0 26px 10px 26px;font-size:12px;}
+.personal-data .item i{padding: 0 0 0 8px;font-size:12px;}
+
+.personal-data .note-info-group{margin:6px 26px 0 26px;padding:16px 0 0 0;border-top:1px dashed #c2d5e3;}
+.personal-data .note-info-group span{display:inline-block;width:100px;padding:0 0 16px 0;font-size:12px;}
+.personal-data .note-info-group span i{font-size:12px;margin:0 3px 0 8px;}
+
+/*/!*category-lists*!/*/
+/*.category-lists{background:#fff;padding:0 0 36px 0;margin:0 0 16px 0;box-shadow:1px 0 3px rgba(66,66,66,0.3);border-top:none;border-left:none;}*/
+/*.category-lists h1{height:35px;line-height:35px;padding:0 0 0 10px;background:#d8d8d8;*/
+    /*margin:0 -1px 0 0;text-shadow:2px 2px 2px rgba(66,66,66,0.3);*/
+/*}*/
+/*.category-lists ul{padding:16px 26px;}*/
+/*.category-lists ul li{line-height:28px;}*/
+/*.category-lists ul li a{color:#f08253;font-size:12px;text-decoration:none;}*/
+/*.category-lists ul li a i{font-size:12px;border:1px solid #f08253;border-radius:5px 5px 5px 5px;border-top:none;*/
+    /*border-bottom:none;padding:0 6px;margin:0 0 0 16px;color:#3ba1f0;*/
+/*}*/
+
+/*reading-list*/
+.blog-left-list{background:#fff;margin:0 0 16px 0;box-shadow:1px 0 3px rgba(66,66,66,0.4);border-top:none;border-left:none;}
+.blog-left-list h1{height:31px;line-height:31px;padding:0 0 0 10px;background:url(../images/titlebg.png) repeat-x top;
+    text-shadow:2px 2px 2px rgba(66,66,66,0.6);box-shadow:1px 1px 2px rgba(66,66,66,0.6);
+}
+.blog-left-list ul{padding:16px 26px;}
+.blog-left-list ul li{line-height:28px;}
+.blog-left-list ul li a{color:#f08253;font-size:12px;text-decoration:none;}
+.blog-left-list ul li a i{font-size:12px;border:1px solid #f08253;border-radius:5px 5px 5px 5px;border-top:none;
+    border-bottom:none;padding:0 6px;margin:0 0 0 16px;color:#3ba1f0;
+}
+
+/*.new-comment-list*/
+.new-comment-list ul li{line-height:23px;margin:0 0 8px 0;}
+

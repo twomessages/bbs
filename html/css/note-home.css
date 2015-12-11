@@ -1,0 +1,24 @@
+/***********************************************************************/
+
+
+
+/*notes-list*/
+.notes-list .categories{line-height:39px;}
+.notes-list ul{font-size:0;}
+.notes-list ul li{display:inline-block;}
+.notes-list ul li a{padding:6px 16px;color:#2661a3;}
+.notes-list ul li a:hover,.categories ul li.active a{text-decoration:none;
+    box-shadow:2px 2px 2px rgba(66,66,66,0.6);
+}
+
+/*.notes-list .items*/
+.notes-list dl.items{padding:0 0 10px 0;border:0;border-top:1px dashed #c2d5e3;}
+.notes-list dl.items dt,.notes-list dl.items dd{float:none;width:100%;}
+.notes-list dl.items dt{height:21px;}
+.notes-list dl.items dt a{font-size:15px;font-weight:bold;}
+.notes-list dl.items dt a:hover{text-decoration:none;}
+.notes-list dl.items dd.date-time,.notes-list dl.items dd.notes-info{color:#999;height:24px;line-height:24px;}
+.notes-list dl.items dd.notes-text{height:50px;line-height:24px;text-indent:28px;}
+.notes-list dl.items dd.notes-info span,.notes-list dl.items dd.notes-info i{color:#999;}
+.notes-list dl.items dd.notes-info span:nth-last-child(1){margin-left:10px;}
+.notes-list dl.items dd.notes-info i{margin-right:6px;}
