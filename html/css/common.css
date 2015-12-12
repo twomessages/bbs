@@ -104,14 +104,14 @@ h1,h2{color:#006293;}
 .article-list-tb .article-title .reward i{font-style:normal;font-weight:bold;margin:0 3px;color:#f26c4f;}
 .article-list-tb td p{line-height:16px;font-size:12px;}
 .article-list-tb td.author{width:130px;text-align:left;}
-.article-list-tb td.author .p1{color:#555;}
+.article-list-tb td.author .p1 a{color:#f08253;}
 .article-list-tb td.author .p1 a{font-size:12px;}
 .article-list-tb td.author .p2{color:#999;}
 .article-list-tb td.reply{width:130px;text-align:left;}
-.article-list-tb td.reply .p1{color:#3ba1f0;}
+.article-list-tb td.reply .p1{color:#009464;}
 .article-list-tb td.reply .p2{color:#999;}
 .article-list-tb td.last-replay{width:122px;text-align:left;}
-.article-list-tb td.last-replay .p1{color:#555;}
+.article-list-tb td.last-replay .p1 a{color:#f08253;}
 .article-list-tb td.last-replay .p1 a{font-size:12px;}
 .article-list-tb td.last-replay .p2{color:#999;}
 
