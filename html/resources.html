@@ -11,8 +11,8 @@
     <script type="text/javascript">
         $(function(){
             var oContainer=$(".falls");
-            var iWidth=233;//列宽
-            var iSpace=16;//列间隔
+            var iWidth=228;//列宽
+            var iSpace=15;//列间隔
             var iOuterWidth=iWidth+iSpace;//列实际宽
             var icells=5;//总列
             var arrLeft=[];
@@ -56,15 +56,17 @@
                     var dom=document.createElement('div');
                     dom.className = 'item';
                     var childHtml = '';
+                    childHtml += "<div class='container'>";
                     childHtml += "<img src='"+obj.image.url+"' width='"+obj.image.width+"' height='"+obj.image.height+"' />";
                     childHtml += "<p class='title'><a href='javascript:;'>Bootstrap 3 中文文档教程</a></p>";
                     childHtml += "<p class='text'>"+obj.content+"</p>";
+                    childHtml += "</div>";
                     $(dom).html(childHtml);
 
                     oContainer.append(dom);
                     //console.log(obj.image.height);
                     var iMinIndex=getMain();
-                    var iHeight=obj.image.height+158;
+                    var iHeight=dom.offsetHeight;
                     //console.log(arrTop[iMinIndex]);
                     $(dom).css({'width':iWidth+'px','height':iHeight+'px'});
                     //$(oImg).center().animate({left:arrLeft[iMinIndex],top:arrTop[iMinIndex],speed:20,interval:30});

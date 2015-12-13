@@ -1,10 +1,11 @@
-.content{height:auto;}
+.content{padding:16px;width:1198px;overflow:hidden;}
 .content .falls{margin:0 -16px 0 0;position:relative;}
-.content .falls .item{width:213px;padding:10px;position:absolute;overflow:hidden;background:#eee;}
-.content .falls .item p{overflow:hidden;text-overflow:ellipsis;}
-.content .falls .item p.title{text-align:center;line-height:38px;}
-.content .falls .item p.title a{color:#333;}
-.content .falls .item p.text{color:#888;font-size:12px;line-height:21px;}
+.content .falls .item{position:absolute;overflow:hidden;}
+.content .falls .item .container{width:208px;padding:10px;background:#eee;}
+.content .falls .item .container p{overflow:hidden;text-overflow:ellipsis;}
+.content .falls .item .container p.title{text-align:center;line-height:38px;}
+.content .falls .item .container p.title a{color:#333;}
+.content .falls .item .container p.text{color:#888;font-size:12px;line-height:21px;}
 
 
 
