@@ -6,9 +6,24 @@
 }
 .forum-topic-list .title i{position:absolute;right:10px;top:8px;font-size:16px;cursor:pointer;text-shadow:3px 3px 3px rgba(66,66,66,0.5);color:#999;}
 .forum-topic-list dl{position:relative;padding:20px;width:369px;height:68px;float:left;}
-.forum-topic-list dl dt{width:30px;text-align:center;}
-.forum-topic-list dl dt i{font-size:30px;color:#3ba1f0;text-shadow:3px 3px 3px rgba(66,66,66,0.5);}
-.forum-topic-list dl dd{position:absolute;left:66px;top:16px;}
+.forum-topic-list dl dt{width:66px;height:66px;position:absolute;top:20px;}
+.forum-topic-list dl dt img{width:66px;height:66px;}
+.forum-topic-list dl dt i{font-size:21px;color:#fff;position:absolute;left:25px;top:-888816px;
+    text-shadow:2px 2px 2px rgba(66,66,66,0.6);
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.forum-topic-list dl:hover dt i{font-weight:bold;}
+/*.forum-topic-list dl dt.t1{background:#c12906;}*/
+/*.forum-topic-list dl dt.t2{background:#bcbc43;}*/
+/*.forum-topic-list dl dt.t3{background:#fbb602;}*/
+/*.forum-topic-list dl dt.t4{background:#0053a5;}*/
+/*.forum-topic-list dl dt.t5{background:#07c7d8;}*/
+/*.forum-topic-list dl dt.t6{background:#9f4e4d;}*/
+.forum-topic-list dl dd{position:absolute;left:108px;top:16px;}
 .forum-topic-desc h1 a{color:#333;line-height:28px;font-size:14px;}
 .forum-topic-desc h1 i{color:#f09307;font-weight:100;border:1px solid #f09307;border-radius:6px;padding:2px 5px;border-top:none;border-bottom:none;
     margin:0 6px;

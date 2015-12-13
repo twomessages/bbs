@@ -1,0 +1,13 @@
+.notes-dynamic-list{padding:10px 10px 16px 0;}
+
+/*.notes-posts-list ul*/
+.notes-dynamic-list .grid{padding:10px 0;}
+.notes-dynamic-list .grid>h1{border-bottom:3px solid #c2d5e3;height:38px;line-height:38px;color:#555;}
+.notes-dynamic-list .item{padding:10px 0;border-bottom:1px dashed #c2d5e3;}
+.notes-dynamic-list .item h2.create-time{line-height:39px;color:#009464;}
+.notes-dynamic-list .item p{line-height:31px;}
+.notes-dynamic-list .item p.author i{display:inline-block;width:13px;color:#f09307;}
+.notes-dynamic-list .item p.author a{color:#2661a3;margin:0 6px;}
+.notes-dynamic-list .item p.author span{color:#999;margin:0 0 0 6px;}
+.notes-dynamic-list .item p.title a{color:#333;}
+.notes-dynamic-list .item p.text{text-indent:28px;}
