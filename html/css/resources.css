@@ -1,0 +1,19 @@
+.content{height:auto;}
+.content .falls{margin:0 -16px 0 0;position:relative;}
+.content .falls .item{width:213px;padding:10px;position:absolute;overflow:hidden;background:#eee;}
+.content .falls .item p{overflow:hidden;text-overflow:ellipsis;}
+.content .falls .item p.title{text-align:center;line-height:38px;}
+.content .falls .item p.title a{color:#333;}
+.content .falls .item p.text{color:#888;font-size:12px;line-height:21px;}
+
+
+
+
+
+
+
+
+
+
+
+

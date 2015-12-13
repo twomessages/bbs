@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/mapfish/mapfish.js" type="text/javascript" charset="UTF-8"></script>
+    <link rel="stylesheet" type="text/css" href="lib/fonts/font-awesome.min.css">
+    <link href="lib/mapfish/mapfish.css" type="text/css" rel="stylesheet" />
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/resources.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function(){
+            var oContainer=$(".falls");
+            var iWidth=233;//列宽
+            var iSpace=16;//列间隔
+            var iOuterWidth=iWidth+iSpace;//列实际宽
+            var icells=5;//总列
+            var arrLeft=[];
+            var arrTop=[];
+            var iBtn=true;
+
+            for(var i=0;i<icells;i++){
+                arrTop.push(0);
+                arrLeft.push(i*iOuterWidth);
+            }
+            //console.log(arrLeft);
+
+            function getMain(){
+                var iv=arrTop[0];
+                var index=0;
+                for(var i=1;i<arrTop.length;i++){
+                    if(arrTop[i]<iv){
+                        iv=arrTop[i];
+                        index=i;
+                    }
+                }
+                return index;
+            }
+            function getMax(){
+                var iv=arrTop[0];
+                var index=0;
+                for(var i=1;i<arrTop.length;i++){
+                    if(arrTop[i]>iv){
+                        iv=arrTop[i];
+                        index=i;
+                    }
+                }
+                return index;
+            }
+
+            function getData(){
+                if(!iBtn)return;
+                iBtn=false;
+                $(data.resource_list).each(function(){
+                    var obj = this.resource;
+                    var dom=document.createElement('div');
+                    dom.className = 'item';
+                    var childHtml = '';
+                    childHtml += "<img src='"+obj.image.url+"' width='"+obj.image.width+"' height='"+obj.image.height+"' />";
+                    childHtml += "<p class='title'><a href='javascript:;'>Bootstrap 3 中文文档教程</a></p>";
+                    childHtml += "<p class='text'>"+obj.content+"</p>";
+                    $(dom).html(childHtml);
+
+                    oContainer.append(dom);
+                    //console.log(obj.image.height);
+                    var iMinIndex=getMain();
+                    var iHeight=obj.image.height+158;
+                    //console.log(arrTop[iMinIndex]);
+                    $(dom).css({'width':iWidth+'px','height':iHeight+'px'});
+                    //$(oImg).center().animate({left:arrLeft[iMinIndex],top:arrTop[iMinIndex],speed:20,interval:30});
+                    $(dom).css({'left':arrLeft[iMinIndex]+'px','top':arrTop[iMinIndex]+'px'});
+
+                    arrTop[iMinIndex]+=iHeight+16;
+
+                    var iMaxIndex=getMax();
+                    $('.content').height(arrTop[iMaxIndex]+16);
+
+                });
+
+                iBtn=true;
+            }
+            getData();
+
+            $(window).on('scroll',function(){
+                var iH=$(window).scrollTop()+$(window).innerHeight();
+                var iMinIndex=getMain();
+                document.title=arrTop[iMinIndex]+oContainer.offset().top+':'+iH;
+                if(arrTop[iMinIndex]+oContainer.offset().top<iH){
+                    //pageIndex++;
+                    getData();
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<header class="header">
+    <div class="header-box">
+        <h1 class="header-logo">LOGO</h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">社区</a></li>
+                <li><a href="notes.html">笔记</a></li>
+                <li class="active"><a href="ask.html">问问</a></li>
+                <li><a href="front.html">前端</a></li>
+                <li><a href="javascript:;">技术</a></li>
+                <li class="active"><a href="resources.html">资源</a></li>
+                <li><a href="javascript:;">招聘</a></li>
+                <li><a href="n-home.html">我的前端</a></li>
+                <li><a href="javascript:;">更多</a></li>
+            </ul>
+            <div class="header-loginbar">
+                <a href="javascript:;">登录</a><a href="javascript:;">注册</a>
+            </div>
+        </nav>
+    </div>
+    <div class="clearfix"></div>
+</header>
+
+<section class="content">
+    <div class="falls">
+    </div>
+
+
+</section>
+
+<footer class="footer">
+    <div class="footer-box">
+        <dl>
+            <dt>我们</dt>
+            <dd><a href="javascript:;">关于我们</a></dd>
+            <dd><a href="javascript:;">注册协议</a></dd>
+            <dd><a href="javascript:;">版权隐私</a></dd>
+            <dd><a href="javascript:;">免责声明</a></dd>
+            <dd><a href="javascript:;">投诉建议</a></dd>
+        </dl>
+        <dl>
+            <dt>商务</dt>
+            <dd><a href="javascript:;">广告推广</a></dd>
+            <dd><a href="javascript:;">招聘服务</a></dd>
+        </dl>
+        <dl>
+            <dt>微博</dt>
+            <dd><a href="javascript:;">腾讯微博</a></dd>
+            <dd><a href="javascript:;">新浪微博</a></dd>
+        </dl>
+        <dl>
+            <dt>合作伙伴</dt>
+            <dd><a href="javascript:;">微软</a></dd>
+            <dd><a href="javascript:;">谷歌</a></dd>
+        </dl>
+        <div class="copyright">
+            <p class="row1">
+                中国第一Web前端开发综合性网站，汇聚了广大中国Web前端开发工程师，并为工程师及企业提供优质的前端资源和服务，是国内前端开发最贴心的综合服务平台。业务涉及：前端招聘、人才推荐、前端神器、教程素材、开发工具、学习服务等诸多前端产业。
+            </p>
+            <p class="row2">Copyright © abc.com All Rights Reserved</p>
+            <p class="row3">粤ICP备10055601号-2</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+</body>
+<script type="text/javascript">
+    var data = {
+        "resource_list":[
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/1.png",
+                        "width":208,
+                        "height":277
+                    },
+                    "title":"Bootstrap 3 中文文档教程",
+                    "content":"Bootstrap3极客学院的http://yunpan.cn/c3g4xDa2rk6m9  访问密码282b [groupid=82]xHTML+CSS[/groupid]"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/2.jpg",
+                        "width":208,
+                        "height":496
+                    },
+                    "title":"171CMS应用市场开源建站系统",
+                    "content":"171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。适用范围：  171cms应用市"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/3.png",
+                        "width":208,
+                        "height":101
+                    },
+                    "title":"CSS3鼠标经过显示更多下载方式",
+                    "content":"CSS3鼠标经过显示更多下载方式鼠标悬停下拉显示二维码 下载地址：http://www.daimabiji.com/mainmenus/1822.html 在线演示：http://www.daimabiji.com/codedemo/1822 "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/6.png",
+                        "width":208,
+                        "height":134
+                    },
+                    "title":"仿京东导航（双向绑定数据）",
+                    "content":"双向绑定数据将导航所需数据平铺在架构中，并且循环生成导航列表。"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/9.jpg",
+                        "width":208,
+                        "height":261
+                    },
+                    "title":"交互设计",
+                    "content":"软件观念革命：交互设计精髓对交互设计感兴趣的童鞋，猛戳下面链接： http://pan.baidu.com/s/1jGvJqwY "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/1.png",
+                        "width":208,
+                        "height":277
+                    },
+                    "title":"Bootstrap 3 中文文档教程",
+                    "content":"Bootstrap3极客学院的http://yunpan.cn/c3g4xDa2rk6m9  访问密码282b [groupid=82]xHTML+CSS[/groupid]"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/2.jpg",
+                        "width":208,
+                        "height":496
+                    },
+                    "title":"171CMS应用市场开源建站系统",
+                    "content":"171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。适用范围：  171cms应用市"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/3.png",
+                        "width":208,
+                        "height":101
+                    },
+                    "title":"CSS3鼠标经过显示更多下载方式",
+                    "content":"CSS3鼠标经过显示更多下载方式鼠标悬停下拉显示二维码 下载地址：http://www.daimabiji.com/mainmenus/1822.html 在线演示：http://www.daimabiji.com/codedemo/1822 "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/6.png",
+                        "width":208,
+                        "height":134
+                    },
+                    "title":"仿京东导航（双向绑定数据）",
+                    "content":"双向绑定数据将导航所需数据平铺在架构中，并且循环生成导航列表。"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/9.jpg",
+                        "width":208,
+                        "height":261
+                    },
+                    "title":"交互设计",
+                    "content":"软件观念革命：交互设计精髓对交互设计感兴趣的童鞋，猛戳下面链接： http://pan.baidu.com/s/1jGvJqwY "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/1.png",
+                        "width":208,
+                        "height":277
+                    },
+                    "title":"Bootstrap 3 中文文档教程",
+                    "content":"Bootstrap3极客学院的http://yunpan.cn/c3g4xDa2rk6m9  访问密码282b [groupid=82]xHTML+CSS[/groupid]"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/2.jpg",
+                        "width":208,
+                        "height":496
+                    },
+                    "title":"171CMS应用市场开源建站系统",
+                    "content":"171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。适用范围：  171cms应用市"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/3.png",
+                        "width":208,
+                        "height":101
+                    },
+                    "title":"CSS3鼠标经过显示更多下载方式",
+                    "content":"CSS3鼠标经过显示更多下载方式鼠标悬停下拉显示二维码 下载地址：http://www.daimabiji.com/mainmenus/1822.html 在线演示：http://www.daimabiji.com/codedemo/1822 "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/6.png",
+                        "width":208,
+                        "height":134
+                    },
+                    "title":"仿京东导航（双向绑定数据）",
+                    "content":"双向绑定数据将导航所需数据平铺在架构中，并且循环生成导航列表。"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/9.jpg",
+                        "width":208,
+                        "height":261
+                    },
+                    "title":"交互设计",
+                    "content":"软件观念革命：交互设计精髓对交互设计感兴趣的童鞋，猛戳下面链接： http://pan.baidu.com/s/1jGvJqwY "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/1.png",
+                        "width":208,
+                        "height":277
+                    },
+                    "title":"Bootstrap 3 中文文档教程",
+                    "content":"Bootstrap3极客学院的http://yunpan.cn/c3g4xDa2rk6m9  访问密码282b [groupid=82]xHTML+CSS[/groupid]"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/2.jpg",
+                        "width":208,
+                        "height":496
+                    },
+                    "title":"171CMS应用市场开源建站系统",
+                    "content":"171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。171CMS是国内首款针对APP应用市场而生开源的CMS，PC站+WAP站+APP原生客户端三站合一，提供完整的APP应用市场搭建、运营、推广一站式解决方案。适用范围：  171cms应用市"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/3.png",
+                        "width":208,
+                        "height":101
+                    },
+                    "title":"CSS3鼠标经过显示更多下载方式",
+                    "content":"CSS3鼠标经过显示更多下载方式鼠标悬停下拉显示二维码 下载地址：http://www.daimabiji.com/mainmenus/1822.html 在线演示：http://www.daimabiji.com/codedemo/1822 "
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/6.png",
+                        "width":208,
+                        "height":134
+                    },
+                    "title":"仿京东导航（双向绑定数据）",
+                    "content":"双向绑定数据将导航所需数据平铺在架构中，并且循环生成导航列表。"
+                }
+            },
+            {
+                "resource":{
+                    "image":{
+                        "url":"images/resource_images/9.jpg",
+                        "width":208,
+                        "height":261
+                    },
+                    "title":"交互设计",
+                    "content":"软件观念革命：交互设计精髓对交互设计感兴趣的童鞋，猛戳下面链接： http://pan.baidu.com/s/1jGvJqwY "
+                }
+            }
+        ]
+    }
+</script>
+</html>
