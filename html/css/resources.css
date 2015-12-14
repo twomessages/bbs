@@ -1,17 +1,23 @@
 .content{padding:16px;width:1198px;overflow:hidden;}
 .content .falls{margin:0 -16px 0 0;position:relative;}
 .content .falls .item{position:absolute;overflow:hidden;}
-.content .falls .item .container{width:208px;padding:10px;background:#eee;}
+.content .falls .item .container{width:208px;padding:10px;background:#ddd;}
 .content .falls .item .container p{overflow:hidden;text-overflow:ellipsis;}
 .content .falls .item .container p.title{text-align:center;line-height:38px;}
 .content .falls .item .container p.title a{color:#333;}
 .content .falls .item .container p.text{color:#888;font-size:12px;line-height:21px;}
 
-
-
-
-
-
+/*top_tab*/
+.top_tab{width:1230px;height:37px;margin:0 auto;background:#fff;padding:10px 0 0 0;overflow:hidden;
+    box-shadow:0 2px 2px rgba(66,66,66,0.3);
+}
+.top_tab>span{line-height:36px;padding:0 26px;font-size:16px;color:#009464;text-shadow:2px 2px 2px rgba(66,66,66,0.6);}
+.top_tab ul{display:inline-block;font-size:0;}
+.top_tab ul li{display:inline-block;line-height:36px;border:1px solid #ccc;border-right:none;}
+.top_tab ul li.last{border-right:1px solid #ccc;}
+.top_tab ul li a{padding:0 26px;color:#009464;text-decoration:none;}
+.top_tab ul li:hover,.top_tab ul li.active{background:#009464;border-color:#009464;}
+.top_tab ul li:hover a,.top_tab ul li.active a{color:#fff;}
 
 
 
