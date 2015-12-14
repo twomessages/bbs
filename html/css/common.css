@@ -69,14 +69,14 @@ h1,h2{color:#006293;}
 .add-article{padding:10px 10px;border-bottom:3px solid #ddd;}
 .add-article .btn img{width:80px;height:33px;border:none;}
 /*article-categories*/
-.article-categories{padding:18px 10px;border-bottom:1px solid #d8d8d8;}
+.article-categories{padding:8px 10px;border-bottom:1px solid #d8d8d8;}
 .article-categories ul li{float:left;margin-right:1px;}
-.article-categories ul li a{padding:8px 16px;font-size:11px;text-decoration:none;}
+.article-categories ul li a{padding:4px 5px;font-size:11px;text-decoration:none;}
 .article-categories ul li a i{color:#f09307;padding:2px 3px;border-radius:3px;border-left:1px solid #f09307;
     border-right:1px solid #f09307;margin:0 0 0 6px;font-size:11px;
 }
 .article-categories ul li a:hover,.article-categories ul li a.active{
-    background:#2661a3;color:#fff;
+    background:#f09307;color:#fff;
 }
 .article-categories ul li a:hover i,.article-categories ul li a.active i{
     color:#fff;
